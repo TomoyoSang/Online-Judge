@@ -3,7 +3,8 @@
 
 using namespace std;
 
-
+//暴力枚举，排序
+//剔除相等的，只剩下最简分数
 int fraction[20000][2] = { 0 };
 double f_value[20000] = { 0 };
 

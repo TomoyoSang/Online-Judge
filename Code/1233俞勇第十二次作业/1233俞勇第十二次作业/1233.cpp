@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 
+//»ØËİ·¨
 using namespace std;
 
 int n, m, st, M;

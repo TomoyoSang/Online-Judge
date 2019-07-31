@@ -14,20 +14,14 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(0);
 	cout.tie(0);
-	//char **s;
-	//s = new char *[1000];
 	int limit = 0;
-	//s[0] = new char[2001];
 	cin.getline(s[0],2000, '\n');
 	char ending[7] = "******";
-	//int equal = strcmp(s[0], ending);
 	while (strcmp(s[limit],ending)!= 0)
 	{
 
 		limit++;
-		//s[limit] = new char[2000];
 		cin.getline(s[limit],2000, '\n');
-		//equal = strlen(s[limit], ending);
 	}
 
 	char* order;

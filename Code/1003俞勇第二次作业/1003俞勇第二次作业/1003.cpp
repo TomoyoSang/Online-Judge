@@ -1,111 +1,76 @@
 #include <iostream>
+#include <cstdio>
+
 using namespace std;
 
-void multiply();
-int check[102][102] = { 0 };
-int _check[102][102] = { 0 };
-int L,i=0,j=0;
+//注意：本轮繁殖产生的新细菌格子不能作为该轮的繁殖中心！！
+
+//培养皿边长
+int L = 0;
+//模拟培养皿
+int plate[101][101] = { 0 };
+//上一轮结束时的繁殖结果
+int _plate[101][101] = { 0 };
+//空白格子数
 int blank = 0;
-int counter = 0;
-int main()
+//繁殖轮数
+int turns = 0;
+//判断该位置是否为空格
+int _judge(int i, int j)
 {
-	
-	cin >> L;
-	for (i = 1; i <= L; i++)
+	if (i >= 0 && i < L&&j >= 0 && j < L&&_plate[i][j] == 0 && plate[i][j] == 0)
 	{
-		for (j = 1; j <= L; j++)
-		{
-			cin >> check[i][j];
-			_check[i][j] = check[i][j];
-			if (check[i][j] == 0)blank++;
-		}
+		plate[i][j] = 1;
+		return 1;
 	}
-
-	for (i = 1; i <= L; i++)
-	{
-		check[0][i] = 1;
-		check[L+1][i] = 1;
-		check[i][0] = 1;
-		check[i][L + 1] = 1;
-		_check[0][i] = 1;
-		_check[L + 1][i] = 1;
-		_check[i][0] = 1;
-		_check[i][L + 1] = 1;
-	}
-	if (blank == 0)cout << 0;
-	else 
-
-	multiply();
-	return 0;
-
-
-		
+	else return 0;
 }
-
-
-void multiply()
+//增殖
+void _multiply()
 {
-	for (i = 1; i <= L; i++)
+	while (blank > 0)
 	{
-		for (j = 1; j <= L; j++)
+		for (int i = 0; i < L; ++i)
 		{
-			if (check[i][j] == 1)
+			for (int j = 0; j < L; ++j)
 			{
-				if (check[i + 1][j] == 0)
+				if (_plate[i][j] == 1)
 				{
-					if (_check[i + 1][j] == 0)
-					{
-						_check[i + 1][j] = 1;
-						blank--;
-					}
+					blank -= _judge(i + 1, j);
+					blank -= _judge(i, j + 1);
+					blank -= _judge(i - 1, j);
+					blank -= _judge(i, j - 1);
 				}
-
-				if (check[i -1][j] == 0)
-				{
-					if (_check[i - 1][j] == 0)
-					{
-						_check[i - 1][j] = 1;
-						blank--;
-					}
-				}
-
-				if (check[i ][j+1] == 0)
-				{
-					if (_check[i][j+1] == 0)
-					{
-						_check[i][j + 1] = 1;
-						blank--;
-					}
-					
-				}
-
-				if (check[i ][j-1] == 0)
-				{
-					if (_check[i][j - 1] == 0)
-					{
-						_check[i][j - 1] = 1;
-						blank--;
-					}
-					
-				}
-
 			}
 		}
-	}
-	for (i = 1; i <= L; i++)
-	{
-		for (j = 1; j <= L; j++)
+		for (int i = 0; i < L; ++i)
 		{
-			check[i][j] = _check[i][j];
+			for (int j = 0; j < L; ++j) {
+				_plate[i][j] = plate[i][j];
+			}
+		}
+
+		turns++;
+	}
+	return;
+
+}
+
+int main()
+{
+	cin >> L;
+	for (int i = 0; i < L; ++i)
+	{
+		for (int j = 0; j < L; ++j)
+		{
+			cin >> plate[i][j];
+			_plate[i][j] = plate[i][j];
+			if (plate[i][j] == 0)
+				blank++;
 		}
 	}
+	_multiply();
+	cout << turns;
 
-	counter++;
-
-
-
-
-	if (blank > 0)multiply();
-	else if (blank == 0)cout << counter;
-	return;
+	return 0;
 }

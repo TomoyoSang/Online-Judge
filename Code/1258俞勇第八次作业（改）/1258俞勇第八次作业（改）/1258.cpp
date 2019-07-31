@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//通过归并排序计数
+
 int N[100009] = { 0 };
 long long sum = 0;
 void merge(int left, int right) {

@@ -2,6 +2,7 @@
 #include<cstring>
 using namespace std;
 
+//Á´±í
 template <class type>
 class link
 {
@@ -80,43 +81,8 @@ public:
 
 	}
 	
-/*	friend link<type>& operator=(link<type> &a)
-	{
-		head = a.head;
-		return *this;
-	}
-
-*/
-
-/*	friend ostream& operator <<(ostream& os, const link<type> link)
-	{
-
-		node* n = link.head;
-		while (n->next != NULL)
-		{
-			n = n->next;
-			cout << n->data << " ";
-
-		}
-		return os;
-	}
 
 
-	friend istream&  operator >>(istream& is, link<type> link)
-	{
-		node *p = link.head;
-		int i = 0;
-		for (i = 0; i < link.amount; i++)
-		{
-			node* n=new link;
-			cin >> n.data;
-			p->next = n;
-			p = n;
-			
-		}
-		return is;
-	}
-	*/
 
 
 };
@@ -126,7 +92,7 @@ int main()
 	int n = 0, m = 0, i = 0;
 	char* itype=new char [8];
 	cin >> itype;
-	//cin.getline(itype,8,'\n');
+	
 	cin >> n >> m;
 	
 

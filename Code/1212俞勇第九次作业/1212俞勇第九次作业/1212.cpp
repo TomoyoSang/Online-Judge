@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 
+//½¨Ê÷+BFS
 using namespace std;
 
 struct node
@@ -8,12 +9,13 @@ struct node
 	int l_son = 0;
 	int r_son = 0;
 	int weight = 0;
-	int fat = 0;
+	int node_num = 0;
 	
 
 };
 
 node* cur[100003] = { NULL };
+//BFS
 int node_que[100003] = { 0 };
 int ifront = 0;
 int cur_len = 0;
@@ -34,21 +36,21 @@ int main()
 		{
 			if(cur[cur[i]->l_son]== NULL)
 			cur[cur[i]->l_son] = new node;
-			cur[cur[i]->l_son]->fat = i;
+			cur[cur[i]->l_son]->node_num = i;
 		}
 		if (cur[i]->r_son != 0)
 		{
 			if (cur[cur[i]->r_son] == NULL)
 			cur[cur[i]->r_son] = new node;
-			cur[cur[i]->r_son]->fat = i;
+			cur[cur[i]->r_son]->node_num = i;
 		}
 
 	}
 
 	int pointer = 1;
-	while (cur[pointer]->fat!=0)
+	while (cur[pointer]->node_num!=0)
 	{
-		pointer = cur[pointer]->fat;
+		pointer = cur[pointer]->node_num;
 	}
 	//BFS
 	

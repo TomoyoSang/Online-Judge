@@ -2,9 +2,9 @@
 
 using namespace std;
 
-void QuickSort(int* array, int *directions,int left, int right);
-int PartSort(int* array,int *directions, int left, int right);
-
+//这道题看懂的话其实很简单
+//只要明白质量相同的两颗球相撞，不考虑序号变化的话，就相当于互不影响的穿过去
+//所以现在就变成了一道小学数学题
 int main()
 {
 	//输入：

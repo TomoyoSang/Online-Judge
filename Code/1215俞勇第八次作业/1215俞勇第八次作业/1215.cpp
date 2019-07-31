@@ -3,7 +3,7 @@
 #include <cstring>
 using namespace std;
 
-
+//简单的优先队列
 int bernoulli[40009] = { 0 };
 int cur_size = 0;
 char order[9] = { 0 };
@@ -16,7 +16,6 @@ void insert()
 		bernoulli[hole] = bernoulli[hole / 2];
 		bernoulli[hole] = k;
 
-		//for (int i = 0; i <= cur_size; i++)cout << bernoulli[i] << " ";
 	    
 		return;
 }
@@ -44,7 +43,6 @@ void idelete()
 
 	}
 	bernoulli[hole] = tmp;
-	//for (int i = 0; i <= cur_size; i++)cout << bernoulli[i] << " ";
 	return;
 }
 
@@ -66,8 +64,6 @@ int main()
 		else if (strcmp(order, "delete") == 0)idelete();
 		else if (strcmp(order, "min") == 0)
 		{
-			/*if (!counter)counter++;
-			else printf("\n");*/
 			mini();
 		}
 	}

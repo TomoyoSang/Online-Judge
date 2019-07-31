@@ -3,6 +3,9 @@
 #include <cstring>
 
 using namespace std;
+
+//»ØËÝ·¨
+
 int N[60][60] = { 0 };
 int dishes[60] = { 0 };
 bool flag1 = 0;

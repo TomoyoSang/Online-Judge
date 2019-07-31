@@ -5,8 +5,9 @@ using namespace std;
 
 int N[66000][3] = { 0 };
 int tree_pos[33000] = { 0 };
+
 int counter = 0;
-void print_node(int num)
+void print_node(int num)//后序遍历
 {
 
 	if (N[num][0] == 0)return;
@@ -31,9 +32,9 @@ int main()
 	{
 		scanf("%d %d %d", &k, &left, &right);
 		cur = tree_pos[k];
-		N[cur][0] = k;
-		N[cur][1] = left;
-		N[cur][2] = right;
+		N[cur][0] = k;//节点的序号
+		N[cur][1] = left;//左儿子
+		N[cur][2] = right;//右儿子
 
 		if (left != -1)
 			tree_pos[left] = cur * 2;
@@ -56,3 +57,4 @@ int main()
 
 	return 0;
 }
+

@@ -2,7 +2,7 @@
 #include <cstdio>
 
 using namespace std;
-
+//优先队列
 
 int N[1006] = { 0 };//学术水平
 bool flag[1006] = { 0 };//有没有问过

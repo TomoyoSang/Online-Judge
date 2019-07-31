@@ -31,43 +31,6 @@ int main()
 }
 
 
-
-/*
-void QuickSort(int* array, int left, int right)
-{
-	if (right - left >= 1)
-	{
-		int ret = DealArray02(array, left, right);
-		QuickSort(array, left, ret);
-		QuickSort(array, ret + 1, right);
-	}
-}
-
-
-int DealArray02(int* array, int left, int right)
-{
-	int begin = left;
-	int end = right - 1;
-	int key = array[right - 1];
-	while (begin < end)
-	{
-		while (begin < end && array[begin] <= key)
-			begin++;
-		array[end] = array[begin];
-
-		while (end > begin && array[end] >= key)
-			end--;
-		if (begin != end)
-			array[begin] = array[end];
-		begin++;
-	}
-	array[end] = key;
-
-	return end;
-}
-
-*/
-
 void QuickSort(int* &array, int left, int right)
 {
 	if (left >= right)//表示已经完成一个组

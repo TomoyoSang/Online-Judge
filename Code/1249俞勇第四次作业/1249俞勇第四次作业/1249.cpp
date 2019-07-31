@@ -2,8 +2,8 @@
 #include <cstdio>
 
 using namespace std;
-
-
+//暴力枚举，排序
+//注意把相等的剔除，只留下最简分数
 int fraction[10000][2] = { 0 };
 double f_value[10000] = { 0 };
 
@@ -104,7 +104,7 @@ int main()
 			printf("%d\n", fraction[i][1]);
 		}
 		
-		else if (f_value[i] == f_value[i + 1])
+		else if (f_value[i] == f_value[i + 1])//注意把相等的剔除，只留下最简分数
 		{
 			values = f_value[i];
 			left = fraction[i][0];

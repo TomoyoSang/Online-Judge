@@ -102,16 +102,9 @@ int main()
 
 	for (int i = 0; i < n; i++)
 	{
-
-
-		
-
-
 		flag1 = linecheck(i);
 		flag2 = rowcheck(i);
 		flag3 = blockcheck(i);
-		/*cout << endl;
-		cout << flag1 << " " << flag2 << " " << flag3 << endl;*/
 		if (i != 0)printf("\n");
 		if (flag1&&flag2&&flag3)printf("%s", "Right");
 		else printf("%s", "Wrong");

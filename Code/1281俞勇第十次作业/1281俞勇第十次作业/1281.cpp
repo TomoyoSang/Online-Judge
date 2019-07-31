@@ -2,7 +2,15 @@
 #include <cstdio>
 
 using namespace std;
+//最好用数组表示每种走法的x，y移动情况
+//如：
+//   x            y    
+//step[0][0]= ;step[0][1]= 
+//step[1][0]= ;step[1][1]= 
+//********
+//step[7][0]= ;step[7][1]=
 
+//以下为BFS的错误示范
 int m, n, m1, m2;
 int startx, starty, endx, endy;
 int N[50][50] = { 0 };
@@ -18,7 +26,6 @@ int main()
 			scanf("%d", &N[i][j]);
 			if (N[i][j] == 0 || N[i][j] == 2)
 			{
-				//N[i][j + 1] = N[i][j++] + 1;
 				N[i][j] = -1;
 			}
 			else if (N[i][j] == 1)
@@ -41,6 +48,8 @@ int main()
 
 		}
 	}
+
+	//以下为BFS的错误示范
 
 	//万恶的BFS
 	map_que[0][0] = startx;

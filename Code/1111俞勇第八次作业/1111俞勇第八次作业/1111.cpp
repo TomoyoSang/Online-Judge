@@ -3,10 +3,11 @@
 #include <cstring>
 
 using namespace std;
+//任意一个子树（序列的一个片段），前序的第一个为根，中序中根的左边为左子树，右边为右子树
 
-char pre[30] = { 0 };
-char mid[30] = { 0 };
-char pos[2600] = { 0 };
+char pre[30] = { 0 };//前序序列
+char mid[30] = { 0 };//中序序列
+char pos[2600] = { 0 };//树
 
 int len = 0;
 
@@ -16,12 +17,11 @@ int _max(int a, int b)
 {
 	return (a > b) ? a : b;
 }
-void fix_root(int pre_l, int pre_r, int mid_l, int mid_r, int gen)
+void fix_root(int pre_l, int pre_r, int mid_l, int mid_r, int gen)//闭区间
 {
 	
 	if (pre_l > pre_r)return;
 	if (mid_l > mid_r)return;
-	//if(pre_l==pre_r&&mid_l==mid_r)
 	char root = pre[pre_l];
 	int cur = 0;
 	for (int i = mid_l; i <= mid_r; i++)
@@ -39,7 +39,7 @@ void fix_root(int pre_l, int pre_r, int mid_l, int mid_r, int gen)
 	return;
 }
 
-void post_print()
+void post_print()//输出后序
 {
 	for (int i = 1; i <= max_size; i++)
 	{

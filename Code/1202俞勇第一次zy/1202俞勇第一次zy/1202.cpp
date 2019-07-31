@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//大整数相加
 #define MAX 1000001
 struct node
 {

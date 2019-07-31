@@ -1,110 +1,65 @@
-
 #include <iostream>
+#include <cstdio>
 #include <iomanip>
-	using namespace std;
+using namespace std;
 
-	  int main()
-	  {
-		  int length = 0;
-		  cin >> length;
+int n;
+//移动方向
+//0---右
+//1---下
+//2---左
+//3---上
+int direction = 0;
+int hill_map[155][155] = { 0 };
+//对应direction的x，y移动
+int step[4][2] = { 0 };
 
-		  int ***map;
-		  map = new int**[length];
-		  int i = 0;
-		  for (i = 0; i < length; i++)
-		  {
-			  map[i] = new int*[length];
-		  }
-		  int j = 0;
-		  for (i = 0; i < length; i++)
-		  {
-			  for (j = 0; j < length; j++)
-			  {
-				  map[i][j] = new int[2];
-				  map[i][j][1] = 0;
-				  map[i][j][0] = 1;
-
-			  }
-		  }
-
-
-
-		  int direction = 1, counter = 1;
-		  i = 0; j = -1;
-
-		  while (1)
-		  {
-			  if (counter > length*length)break;
-			  if ((direction == 1) && (j + 1 < length) && (map[i][j + 1][1] == 0))
-			  {
-				  j += 1;
-				  map[i][j][0] = counter;
-				  counter++;
-				  map[i][j][1] = 1;
-			  }
-			  else if (direction == 1) {
-				  direction = -2;
-				  continue;
-			  }
-
-			  if ((direction == -1) && (j >= 1) && (map[i][j - 1][1] == 0))
-			  {
-				  j -= 1;
-				  map[i][j][0] = counter;
-				  counter++;
-				  map[i][j][1] = 1;
-			  }
-			  else if (direction == -1) {
-				  direction = 2;
-				  continue;
-			  }
-			  ;
-
-			  if ((direction == 2) && (i >= 1) && (map[i - 1][j][1] == 0))
-			  {
-				  i -= 1;
-				  map[i][j][0] = counter;
-				  counter++;
-				  map[i][j][1] = 1;
-			  }
-			  else if (direction == 2)
-			  {
-				  direction = 1; continue;
-			  }
-
-
-
-			  if ((direction == -2) && (i < length - 1) && (map[i + 1][j][1] == 0))
-			  {
-				  i += 1;
-				  map[i][j][0] = counter;
-				  counter++;
-				  map[i][j][1] = 1;
-			  }
-			  else if (direction == -2)
-			  {
-				  direction = -1;
-				  continue;
-			  }
-
-
-
-		  }
-
-		  for (i = 0; i < length; i++)
-		  {
-			  if (i > 0)cout << endl;
-			  for (j = 0; j < length; j++)
-			  {
-				  cout << setw(6) << map[i][j][0];
-			  }
-		  }
-
-
-
-		  return 0;
-
-
-
-
-	  }
+//当走到边界时转换方向
+void direction_change(int x, int y)
+{
+	if (hill_map[x + step[direction][0]][y + step[direction][1]] != 0)
+	{
+		direction = (++direction) % 4;
+	}
+	
+	return;
+}
+int main()
+{
+	
+	scanf("%d", &n);
+	//当前坐标
+	int x = 1, y = 0;
+	//当前数值
+	int counter = 1;
+	//对应direction的step移动
+	step[0][0] = 0; step[0][1] = 1;
+	step[1][0] = 1; step[1][1] = 0;
+	step[2][0] = 0; step[2][1] = -1;
+	step[3][0] = -1; step[3][1] = 0;
+	//在区域外建围墙
+	for (int i = 1; i <= n; ++i)
+	{
+		hill_map[i][0] = -1;
+		hill_map[i][n + 1] = -1;
+		hill_map[0][i] = -1;
+		hill_map[n + 1][i] = -1;
+	}
+	while (true)
+	{
+		direction_change(x, y);
+		hill_map[x + step[direction][0]][y + step[direction][1]] = counter++;
+		x += step[direction][0];
+		y += step[direction][1];
+		if (counter > n*n)break;
+	}
+	for (int i = 1; i <= n; ++i)
+	{
+		for (int j = 1; j <= n; ++j)
+		{
+			cout << setw(6) << hill_map[i][j];
+		}
+		cout << "\n";
+	}
+	return 0;
+}
