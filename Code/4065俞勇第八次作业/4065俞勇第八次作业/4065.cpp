@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int N[302][302][3] = { 0 };
 int queue[100000][2] = { 0 };
 int iendx = 0, iendy = 0;

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
+
+//最好细心一点，，需要注意的地方不少
 //typedef long long ll
 long long getm = 0, getn = 0;
 long long calcu(long long m)

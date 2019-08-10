@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//矩阵的快速幂
+//最好查一查
 long long A[2][2] = { {1,1} };
 long long B[2][2] = { {1,1},{1,0} };
 long long cur_B1[2][2] = { {1,1},{1,0} };

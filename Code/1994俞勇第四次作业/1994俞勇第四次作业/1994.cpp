@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//BFS
 int n = 0, m = 0;
 int my_map[520][520] = { 0 };
 void own_place(int left,int right)

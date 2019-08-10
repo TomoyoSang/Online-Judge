@@ -52,15 +52,9 @@ int main()
 	cin >> Sstring;
 	
 	n = strlen(Sstring);
-	/*cmp = strcmp(Cstring, Sstring);
-	if (cmp == 0)
-	{
-		cout << n;
-		return 0;
-	}*/
+	
 
 	factor(n);
-	//for (int i = 0; i < 22; i++)cout << factors[i];
 	
 	for (int i = 0; factors[i] != 0; i++)
 	{

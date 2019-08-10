@@ -37,13 +37,7 @@
 				condition[i][j] = -1;
 			}
 		}
-	/*	for (i = 0; i < N; i++)
-		{
-			condition[i][0] = i;
-			place[i] = i;
-		
-		}
-		*/
+
 
 		char operate[10] = { 0 };
 		char moveway[10] = { 0 };
@@ -101,11 +95,7 @@
 			high1++;
 		}
 		int low1 = high1 ;
-		/*
-		while (condition[pos1][high1] != -1)
-		{
-			high1++;
-		}*/
+		
 		high1++;
 		//ÒÆÈëÎ»ÖÃ
 		while (condition[pos2][high2] != order2	)
@@ -237,11 +227,7 @@
 	{
 		int pos = order;
 		if (pos == place[order])return;
-		/*while (condition[pos][i] != -1)
-		{
-			i++;
-		}
-		*/
+		
 		condition[pos][0] = pos;
 		//condition[pos][i] = order;
 		condition[pos][1] = -1;

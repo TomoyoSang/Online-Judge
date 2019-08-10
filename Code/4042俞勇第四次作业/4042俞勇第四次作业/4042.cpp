@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int n = 0;
 int N[300100] = { 0 };
 int multi[300100] = { 0 };

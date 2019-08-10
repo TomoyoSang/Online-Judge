@@ -5,8 +5,9 @@ using namespace std;
 
 int X = 0, Y = 0;
 int N;
-int my_map[102	0][1020] = { 0 };
+int my_map[1020][1020] = { 0 };
 int leftmax = -500, rightmax = -500, leftmin = 500, rightmin = 500;
+
 
 
 

@@ -5,6 +5,7 @@ using namespace std;
 int N[10000][2] = { 0 };
 int n;
 
+
 void Quicksort(int left, int right)
 {
 	if (left == right)return;

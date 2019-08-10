@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace  std;
 
+//ур╧Фби
+
 void  calcu(int num);
 long long N[1000] = { 0 };
 int num;

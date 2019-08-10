@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int test_nums[100000];
 int target_group[10000][2];
 int flag = 0;
@@ -36,24 +35,8 @@ int main()
 	}
 
 
-/*
 
 
-	for (i = 0; i < K; i++)
-	{
-		flag = 0;
-		for (j = 0; j < N; j++)
-		{
-			det = (long long)((long long)(target_group[i][0]) - (long long) (test_nums[j]) * target_group[i][1]);
-				if (det >= 0)flag++;
-
-		}
-		if (i != 0)cout << endl;
-		cout << flag;
-
-	}
-
-*/
 
 	for (i = 0; i < K; i++)
 	{

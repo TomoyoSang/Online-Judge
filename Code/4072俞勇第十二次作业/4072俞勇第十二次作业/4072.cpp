@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 long long n, m, k;
 
 long long N[100030][3] = { 0 };

@@ -8,6 +8,7 @@ int MAx(int a,int b)
 }
 
 using namespace std;
+//¶¯Ì¬¹æ»®
 
 int M = 0, T = 0;
 int V[102][1020] = { 0 };

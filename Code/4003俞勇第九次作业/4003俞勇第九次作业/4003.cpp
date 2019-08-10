@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 int n, m;
 int _pow[32] = { 0 };
 int pos[32] = { 0 };

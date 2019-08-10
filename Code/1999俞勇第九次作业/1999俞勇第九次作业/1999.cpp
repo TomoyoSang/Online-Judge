@@ -29,31 +29,7 @@ bool test(int i)
 	int x = treasure[i][0];
 	int y = treasure[i][1];
 	int _counter = 0;
-	/*if (x > 0)
-	{
-		if (N[x - 1][y] == -1)counter++;
-	}
-	if (x < n - 1)
-	{
-		if (N[x + 1][y] == -1)counter++;
-	}
-	if (y > 0)
-	{
-		if (N[x][y - 1] == -1)counter++;
-	}
-	if (y < m - 1)
-	{
-		if (N[x][y + 1] == -1)counter++;
-	}
-	if (counter == 4)return 0;
-	else if (counter == 3)
-	{
-		if (x == 0 || x == n - 1 || y == 0 || y == m - 1)return 0;
-	}
-	else if (counter == 2)
-	{
-		if (x == 0 && y == 0 || x == 0 && y == m - 1 || x == n - 1 && y == 0 || x == n - 1 && y == m - 1)return 0;
-	}*/
+	
 	memset(visit, 0, sizeof(visit));
 	_front = 0;
 	que_len = 1;
@@ -61,6 +37,8 @@ bool test(int i)
 	bfs_que[_front][0] = x;
 	bfs_que[_front][1] = y;
 
+	//早期做法，不推荐
+	//推荐将每种走法的x，y变化用n*2的数组存起来，会大大减少bug
 	while (que_len)
 	{
 		if (bfs_que[_front][0] > 0 && visit[bfs_que[_front][0] - 1][bfs_que[_front][1]] != 1 && N[bfs_que[_front][0] - 1][bfs_que[_front][1]] != -1)

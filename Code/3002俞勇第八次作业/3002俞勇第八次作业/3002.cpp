@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Õ∞≈≈–Ú
 int A[1003] = { 0 };
 int main()
 {

@@ -51,7 +51,6 @@ int main()
 	for (int i = 0; i < m; i++)
 	{
 		scanf("%d%d%d", &operators[i][0], &operators[i][1], &operators[i][2]);
-		//cin >> operators[i][0] >> operators[i][1] >> operators[i][2];
 	}
 	
 	for (int i = 0; i < m; i++)

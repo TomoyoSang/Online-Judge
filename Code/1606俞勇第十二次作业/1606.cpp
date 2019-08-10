@@ -5,6 +5,9 @@
 
 using namespace std;
 
+//我用的VS2019打开的
+//VS2017可能会不过编
+
 int counter = 0;
 int num = 0;
 int n, m;

@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int pos[100020] = { 0 };
 int N, S;
 void divide(int left, int right)

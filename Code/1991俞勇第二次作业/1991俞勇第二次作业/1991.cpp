@@ -51,7 +51,6 @@ void Divide(double left,double right )
 	}
 	double mid = (left + right) / 2;
 	
-	//if(right-left<0.0000005)cout<<left;
 	
 	flag=iremain(mid);
 

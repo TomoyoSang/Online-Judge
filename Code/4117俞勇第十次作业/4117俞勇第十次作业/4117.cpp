@@ -3,6 +3,7 @@
 #define ll long long
 
 using namespace std;
+//不知为什么有时候会莫名的被卡一个数据
 
 long long n, m;
 long long N[100005] = { 0 };
