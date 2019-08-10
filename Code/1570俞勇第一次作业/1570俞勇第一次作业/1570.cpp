@@ -9,7 +9,6 @@ int main()
 {
 	//ÊäÈë
 	int common = 0, like = 0, i = 0, j = 0;
-	//cin >> common >> like;
 	scanf("%d%d", &common, &like);
 
 	int *comnum, *likenum;

@@ -2,6 +2,8 @@
 #include<algorithm>
 using namespace std;
 
+//数学方法解决
+//运行时间较短
 double L = 0;
 
 int i = 0, j = 0;
@@ -40,12 +42,7 @@ int main()
 	
 	if (((y<mid)&&(x<k))||((x==i)&&(y>=mid)))
 	{
-	
-		
-		
-			Lpace += k - x + y - l;
-		
-		
+		Lpace += k - x + y - l;
 	}
 	else if ((y == k) || (x == l))
 	{
@@ -88,10 +85,6 @@ int main()
 
 	cout << " "<<Space; 
 	
-
-	
-
-
 
 	return 0;
 }

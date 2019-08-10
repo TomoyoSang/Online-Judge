@@ -56,13 +56,7 @@ void post_print(node* p)
 	printf("%d ", p->elem);
 	return;
 }
-/*void clear(node* p)
-{
-	if (p->left_son != NULL)clear(p->left_son);
-	if (p->right_son != NULL)clear(p->right_son);
-	delete p;
-	return;
-}*/
+
 int main()
 {
 	scanf("%d", &n);
@@ -77,7 +71,6 @@ int main()
 	node* root = new node;
 	fix_root(0, n - 1, 0, n - 1, root);
 	post_print(root);
-	//clear(root);
-
+	
 	return 0;
 }

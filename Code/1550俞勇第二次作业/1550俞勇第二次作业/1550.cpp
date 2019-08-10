@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+//从左到由右（左>右）+从右到左（右>左）+水平
 
 int main()
 {
@@ -62,11 +62,6 @@ int main()
 			j--;
 
 		}
-		/*  if(j==0)
-		  {
-			  if(height[0]<height[i])break;
-		  }
-	   */
 		if (j < 0)break;
 		else
 		{

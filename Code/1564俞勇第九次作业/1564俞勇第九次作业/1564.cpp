@@ -83,12 +83,6 @@ int main()
 		scanf("%d %d %d %d", &startx, &starty, &endx, &endy);
 
 		dfs(startx, starty,1, 0);
-		/*int mini = 0;
-		for (int i = 0; i < counter; ++i)
-		{
-			mini = _min(mini, pre_sum[i]);
-		}
-		printf("%d\n", mini);*/
 		printf("%d", vis[endx][endy]);
 	}
 

@@ -15,7 +15,6 @@ int main(){
 	int previous = 1850,latter=2050;
 	int i = 0, j = 0;
 
-	//scanf("%d%d%d%d%d", &yue, &zhou, &xingqi, &previous, &latter);
 	cin >> yue >> zhou >> xingqi >> previous >> latter;
 	for (i = previous; i <= latter; i++)
 	{
@@ -29,25 +28,20 @@ int main(){
 void printout(int yue, int zhou, int xingqi, int year)
 {
 	int days = gaps( yue,  year);
-	//cout << days << endl;
 	int weekday = (1 + days) % 7 + 1;
 	int thisday = 0;
 	if (weekday < xingqi)
 	{
-		thisday = xingqi - weekday + 7 * zhou - 6; //cout << '*';
+		thisday = xingqi - weekday + 7 * zhou - 6; 
 	}
 	else if(weekday==xingqi){
-		 thisday = 7 * zhou - 6; //cout << '|';
+		 thisday = 7 * zhou - 6; 
 	}
 	else if (weekday > xingqi) {
-		thisday = xingqi - weekday + 7 * zhou + 1; //cout << '`';
+		thisday = xingqi - weekday + 7 * zhou + 1; 
 	}
 		
 	bool i = existence(year, yue, thisday);
-	//bool j = leapyear(year);
-	//if (j&&(yue > 2))thisday++;
-	//cout<<year<<yue<<thisday<<endl;
-	//printf("%04d%02d%02d", year, yue, thisday);
 	if (i)
 	{
 		printf("%04d", year);
@@ -146,21 +140,11 @@ int gaps(int yue, int year)
 
 int gapyear(int year,int yue)
 {
-	//int pre = year - 1;
+	
 	bool leap = 1;
-	//if (yue <= 2)
-	//{
-		//leap = leapyear(pre);
-		//if (leap)return 366;
-		//else return 365;
-	//}
-
-	//else 
-	//{
-		leap = leapyear(year);
-		if (leap)return 366;
-		else return 365;
-	//}
-
-
+	
+	leap = leapyear(year);
+	if (leap)return 366;
+	else return 365;
+	
 }

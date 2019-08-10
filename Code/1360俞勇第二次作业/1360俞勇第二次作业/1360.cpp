@@ -1,16 +1,11 @@
 #include <iostream>
 using namespace std;
-//#define endl '\n'
 
-
-
+//对结尾排序
+//不断缩小时间区间
 
 int N1[100000] = { 0 };
 int N2[100000] = { 0 };
-
-
-
-
 
 void  Quicksort(int* array1, int* array2, int left, int right)
 {
@@ -74,55 +69,20 @@ int main()
 	cin.tie(0);
 	cout.tie(0);*/
 	int n = 0;
-	//cin >> n;
 	scanf("%d", &n);
 	int Class = 0;
 
 	for (int i = 0; i < n; i++)
 	{
-		//cin >> N1[i] >> N2[i];
 		scanf("%d%d", &N1[i], &N2[i]);
 	}
 
 	Quicksort(N1, N2, 0, n - 1);
 
-	
-	
-	
-	
-
-
-
 	int Start = 0;
 	int End = 1000001;
 	
 	int min = 0;
-/*	while (flag)
-	{
-		flag = 0;
-		for (int i = 0; i < n; i++)
-		{
-
-			if (N1[i] >= Start && N2[i] <= End)
-			{
-				flag = 1;
-				min = i;
-				End = N2[i];
-				break;
-			}
-
-		}
-
-		if (End != 1000001)
-		{
-			Class++;
-			End = 1000001;
-			Start = N2[min];
-
-		}
-
-	}
-*/
 
 	for (int i = 0; i < n; i++)
 	{
@@ -136,7 +96,6 @@ int main()
 
 
 	}
-	//cout << Class;
 	printf("%d", Class);
 	return 0;
 }

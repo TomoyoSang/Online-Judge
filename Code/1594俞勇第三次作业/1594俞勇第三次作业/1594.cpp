@@ -2,6 +2,8 @@
 #include <cstdio>
 
 using namespace std;
+
+//Ç°×ººÍ
 long long n[13000002] = { 0 };
 
 int main()
