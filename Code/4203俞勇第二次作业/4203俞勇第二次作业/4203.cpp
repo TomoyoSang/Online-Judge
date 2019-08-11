@@ -2,6 +2,7 @@
 #include <cstring>
 using namespace std;
 
+
 #define endl '\n'
 #define E 1000000005
 
