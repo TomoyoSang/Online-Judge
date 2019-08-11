@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int N[200100] = { 0 };
 
 void merge_sort(int left,int right) {
@@ -50,6 +51,7 @@ void merge_sort(int left,int right) {
 
 int main()
 {
+
 	int T,n;
 	scanf("%d%d", &T, &n);
 	for (int i=0;i<n;i++)

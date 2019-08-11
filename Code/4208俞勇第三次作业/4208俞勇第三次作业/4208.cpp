@@ -3,6 +3,7 @@
 #include <cmath>
 using namespace std;
 
+
 int main()
 {
 	int n, a, b, x1, x2, y1, y2,imax;

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 
+
 using namespace std;
 long long n, m;
 long long N[100009] = { 0 };

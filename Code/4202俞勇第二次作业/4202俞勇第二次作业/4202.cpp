@@ -92,8 +92,6 @@ int planttree(int i, int gaoai, int height)
 }
 
 
-
-
 int main()
 {
 
@@ -121,8 +119,6 @@ int main()
 	sum2 = (sum2 > sum3) ? sum2 : sum3;
 	sum1 = (sum1 > sum2) ? sum1 : sum2;
 	cout << sum1;
-	//int sum0 = Max(planttree(0, 0, 0), planttree(0, 0, 1));
-	//int sum1 = Max(planttree(0, 1,2),planttree(0,1,1));
-	//cout << ((sum0 > sum1) ? sum0 : sum1);
+	
 	return 0;
 }

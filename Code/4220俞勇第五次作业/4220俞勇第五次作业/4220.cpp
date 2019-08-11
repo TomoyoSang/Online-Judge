@@ -3,6 +3,7 @@
 #include <cmath>
 using namespace std;
 
+
 inline int read()
 {
 	int X = 0, w = 0;

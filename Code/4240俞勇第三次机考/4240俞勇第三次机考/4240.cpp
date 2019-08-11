@@ -3,6 +3,7 @@
 #define imod 2000000
 using namespace std;
 
+
 int N[4000009] = { 0 };
 void ins(int num)
 {

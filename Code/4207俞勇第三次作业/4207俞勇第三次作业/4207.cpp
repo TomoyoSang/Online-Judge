@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int n, k;
 int N[5000] = { 0 };
 void Quicksort1(int left,int right)

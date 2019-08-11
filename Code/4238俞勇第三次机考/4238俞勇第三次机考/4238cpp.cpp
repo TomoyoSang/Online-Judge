@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int n, m;
 int ope;
 int X, Y;
